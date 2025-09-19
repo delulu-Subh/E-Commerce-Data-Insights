@@ -1,0 +1,224 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* Body layout */
+body {
+    display: flex;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #1e293b, #0f172a);
+    color: #fff;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    border-right: 1px solid #334155;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #38bdf8;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 6px 0;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: #334155;
+    color: #fff;
+}
+
+.sidebar a.active {
+    background: #38bdf8;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(56,189,248,0.5);
+}
+
+/* Main section */
+.main {
+    margin-left: 240px;
+    padding: 30px;
+    width: calc(100% - 240px);
+}
+
+/* Header */
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+header p {
+    color: #475569;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Info Box & KPI Boxes */
+.info-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: linear-gradient(145deg, #1c1f2a, #2a2f3d);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: #e0e0e0;
+    line-height: 1.6;
+    flex: 1 1 200px;
+    min-width: 180px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box strong {
+    color: #ffd700;
+}
+
+.info-box:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Chart grid */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 24px;
+}
+
+/* Chart cards */
+.chart {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.chart:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.chart h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.chart img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Chart description */
+.chart p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered chart animations */
+.chart:nth-child(1) { animation-delay: 0s; }
+.chart:nth-child(2) { animation-delay: 0.1s; }
+.chart:nth-child(3) { animation-delay: 0.2s; }
+.chart:nth-child(4) { animation-delay: 0.3s; }
+.chart:nth-child(5) { animation-delay: 0.4s; }
+.chart:nth-child(6) { animation-delay: 0.5s; }
+.chart:nth-child(7) { animation-delay: 0.6s; }
+.chart:nth-child(8) { animation-delay: 0.7s; }
+.chart:nth-child(9) { animation-delay: 0.8s; }
+.chart:nth-child(10) { animation-delay: 0.9s; }
+.chart:nth-child(11) { animation-delay: 1s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .charts {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .sidebar h2 {
+        display: none;
+    }
+    .sidebar a {
+        text-align: center;
+        padding: 12px 0;
+        font-size: 0.9rem;
+    }
+    .main {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 20px;
+    }
+    .charts {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .info-boxes {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    .chart h3 {
+        font-size: 1rem;
+    }
+}
