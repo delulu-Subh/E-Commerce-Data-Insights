@@ -1,7 +1,3 @@
-Thank you for sharing the additional images! These charts further enhance your Superstore Analytics Dashboard by providing a broader view of the data. I’ve updated the GitHub README to incorporate all the provided visualizations, assigning filenames based on their titles for consistency. You can upload these images to an `images` folder in your repository and update the paths if needed. Below is the revised README:
-
----
-
 # Superstore Analytics Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
@@ -119,9 +115,6 @@ The HTML frontend provides an interactive dashboard with four pages:
 - **Customers (`customers.html`)**: Shows metrics (e.g., 500 customers, $25,000 top customer revenue) and insights for top customers by revenue and AOV.
 - **Products (`products.html`)**: Highlights metrics (e.g., 300 products, Technology as top category) and insights for top products, revenue, and profitability.
 - **Orders (`orders.html`)**: Presents metrics (e.g., 1,000 orders, December as peak month) and insights for order trends and regional performance.
-
-*Example Frontend Screenshot*:  
-![Dashboard Home](images/dashboard_home.png) <!-- Replace with actual screenshot -->
 
 ## Contributing
 1. Fork the repository.
